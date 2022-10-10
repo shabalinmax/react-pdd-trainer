@@ -1,0 +1,66 @@
+.loginWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-transform: uppercase;
+  overflow-y: hidden;
+}
+.loginWrapper h1 {
+  margin-top: 40vh;
+  margin-bottom: 5vh;
+  color: white;
+}
+.loginWrapper input {
+  margin-right: 20px;
+  padding: 10px;
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+}
+.loginWrapper button {
+  margin-right: 5px;
+  padding: 10px;
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  transition: 0.3s;
+}
+.loginWrapper button:hover {
+  color: white;
+  background-color: #6380d3;
+}
+@media screen and (max-width: 860px) {
+  .loginWrapper div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .loginWrapper div input {
+    margin-bottom: 5px;
+    margin-right: 15px;
+    padding: 5px;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+  }
+  .loginWrapper div button {
+    margin-top: 5px;
+    padding: 5px;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 420px) {
+  .loginWrapper h1 {
+    font-size: 22px;
+  }
+}
+
+/*# sourceMappingURL=Login.css.map */

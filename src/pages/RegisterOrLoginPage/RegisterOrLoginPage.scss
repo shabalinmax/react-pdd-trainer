@@ -1,0 +1,74 @@
+.wrapperRegisterOrLoginPage {
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  h1 {
+    margin-top: 40vh;
+    color: white;
+    display: table;
+    font-size: 3em;
+    @media screen and (max-width: 900px){
+      font-size: 30px;
+    }
+    @media screen and (max-width: 570px){
+      font-size: 20px;
+    }
+    @media screen and (max-width: 400px){
+      font-size: 15px;
+    }
+  }
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .register {
+      margin-right: 20px;
+      padding: 10px;
+      background-color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 20px;
+      transition: 0.3s;
+
+      &:hover {
+        color: white;
+        background-color: #6380d3;
+      }
+    }
+
+    .login {
+      margin-right: 20px;
+      padding: 10px;
+      background-color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 20px;
+      transition: 0.3s;
+
+      &:hover {
+        color: white;
+        background-color: #6380d3;
+      }
+    }
+
+    @media screen and (max-width: 570px) {
+      .register {
+        margin-right: 10px;
+        padding: 5px;
+        background-color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 15px;
+      }
+      .login {
+        padding: 5px;
+        background-color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 15px;
+      }
+    }
+  }
+}

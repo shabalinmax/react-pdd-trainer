@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: 'Exo', sans-serif;
+}
+
+.App{
+  background: rgb(176,190,240);
+  background: linear-gradient(90deg, rgba(176,190,240,1) 0%, rgba(127,147,213,1) 54%, rgba(22,71,226,1) 76%);
+  min-height: 100vh;
+}
+

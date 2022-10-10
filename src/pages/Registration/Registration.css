@@ -1,0 +1,66 @@
+.registration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-transform: uppercase;
+  overflow-y: hidden;
+}
+.registration h1 {
+  margin-top: 40vh;
+  margin-bottom: 5vh;
+  color: white;
+}
+.registration input {
+  margin-right: 20px;
+  padding: 10px;
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+}
+.registration button {
+  margin-right: 5px;
+  padding: 10px;
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  transition: 0.3s;
+}
+.registration button:hover {
+  color: white;
+  background-color: #6380d3;
+}
+@media screen and (max-width: 860px) {
+  .registration div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .registration div input {
+    margin-bottom: 5px;
+    margin-right: 15px;
+    padding: 5px;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+  }
+  .registration div button {
+    margin-top: 5px;
+    padding: 5px;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 420px) {
+  .registration h1 {
+    font-size: 22px;
+  }
+}
+
+/*# sourceMappingURL=Registration.css.map */
