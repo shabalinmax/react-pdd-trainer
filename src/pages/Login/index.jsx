@@ -7,18 +7,14 @@ const Login = ({setLoginEmail,setLoginPass}) => {
     const BackToRegisterOrLogIn = () => {
         navigate('/')
     }
-    const toLogin = () => {
 
-        // navigate('/home')
-        console.log('done')
-    }
     return (
         <div className={'loginWrapper'}>
             <h1>войти</h1>
             <div>
-                <input className={'setLoginEmail'} onChange={(event) => setLoginEmail(event.target.value)} type="text"/>
-                <input className={'setLoginPass'} onChange={(event) => setLoginPass(event.target.value)} type="password"/>
-                <button onClick={() => toLogin()}>
+                <input placeholder={'E-mail...'} className={'setLoginEmail'} onChange={(event) => setLoginEmail(event.target.value)} type="text"/>
+                <input placeholder={'Пароль...'}   className={'setLoginPass'} onChange={(event) => setLoginPass(event.target.value)} type="password"/>
+                <button onClick={() => '1'}>
                     войти
                 </button>
                 <button onClick={() => BackToRegisterOrLogIn()}>

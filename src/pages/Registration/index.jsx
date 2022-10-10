@@ -12,8 +12,8 @@ const Registration = ({ register, setRegisterEmail, setRegisterPass }) => {
         <div className={'registration'}>
             <h1>зарегистрироваться</h1>
             <div>
-                <input className={'setRegisterEmail'} onChange={(event) => setRegisterEmail(event.target.value)} type="text"/>
-                <input className={'setRegisterPass'} onChange={(event) => setRegisterPass(event.target.value)}  type="password"/>
+                <input placeholder={'E-mail...'} className={'setRegisterEmail'} onChange={(event) => setRegisterEmail(event.target.value)} type="text"/>
+                <input placeholder={'Пароль...'} className={'setRegisterPass'} onChange={(event) => setRegisterPass(event.target.value)}  type="password"/>
                     <button onClick={() => register()}>
                         зарегистрироваться
                     </button>
