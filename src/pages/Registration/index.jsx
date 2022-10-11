@@ -20,7 +20,6 @@ const Registration = ({ register, setRegisterEmail, setRegisterPass }) => {
                     <button onClick={() => BackToRegisterOrLogIn()}>
                         назад
                     </button>
-
             </div>
         </div>
     );

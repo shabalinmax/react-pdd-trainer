@@ -1,0 +1,26 @@
+.MainMenu {
+  .headerMainMenu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 5%;
+    padding-top: 10px;
+    font-size: 20px;
+    color: white;
+    font-weight: 500;
+    button {
+      cursor: pointer;
+      margin-left: 2%;
+      padding: 3px;
+      background-color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 20px;
+      transition: 0.3s;
+      &:hover {
+        color: white;
+        background-color: #6380d3;
+      }
+    }
+  }
+}
