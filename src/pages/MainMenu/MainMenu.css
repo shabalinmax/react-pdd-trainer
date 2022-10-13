@@ -1,4 +1,4 @@
-.MainMenu .headerMainMenu {
+.MainMenuWrapper .headerMainMenu {
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -7,8 +7,9 @@
   font-size: 20px;
   color: white;
   font-weight: 500;
+  margin-bottom: 20vh;
 }
-.MainMenu .headerMainMenu button {
+.MainMenuWrapper .headerMainMenu button {
   cursor: pointer;
   margin-left: 2%;
   padding: 3px;
@@ -17,10 +18,34 @@
   border-radius: 10px;
   font-size: 20px;
   transition: 0.3s;
+  font-weight: 600;
 }
-.MainMenu .headerMainMenu button:hover {
+.MainMenuWrapper .headerMainMenu button:hover {
   color: white;
   background-color: #6380d3;
+}
+.MainMenuWrapper .MainMenuTickets {
+  max-width: 90vw;
+  margin: 0 auto;
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 1px 1px;
+  grid-template-areas: ". . . . . . . . . ." ". . . . . . . . . ." ". . . . . . . . . ." ". . . . . . . . . .";
+}
+.MainMenuWrapper .MainMenuTickets button {
+  cursor: pointer;
+  min-height: 10vh;
+  border: none;
+  font-size: 20px;
+  color: white;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.MainMenuWrapper .MainMenuTickets button:hover {
+  font-size: 50px;
+  box-shadow: 10px 5px 5px black;
 }
 
 /*# sourceMappingURL=MainMenu.css.map */

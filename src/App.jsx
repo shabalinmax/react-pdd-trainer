@@ -1,13 +1,14 @@
 import React from "react";
 import {createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWithEmailAndPassword} from 'firebase/auth'
 import {doc, getDoc, collection, addDoc, setDoc} from 'firebase/firestore'
-import {auth, db} from "./firebase-config";
+import {auth} from "./firebase-config";
 import { Routes, Route, Link , useNavigate} from "react-router-dom";
 import RegisterOrLoginPage from "./pages/RegisterOrLoginPage";
 import Registration from './pages/Registration'
 import Login from "./pages/Login";
 import MainMenu from "./pages/MainMenu";
 import './App.css';
+import {getDatabase, ref, set} from "firebase/database";
 
 function App() {
     const [loginEmail, setLoginEmail] = React.useState('')
@@ -22,63 +23,58 @@ function App() {
             setUser(currentUser)
         })
     })
-
-    const usersData = collection(db, 'users')
-    const addDataRegistration = async () => {
-        await setDoc(doc(db, "users", registerEmail), {
-            1: false,
-            2: false,
-            3: false,
-            4: false,
-            5: false,
-            6: false,
-            7: false,
-            8: false,
-            9: false,
-            10: false,
-            11: false,
-            13: false,
-            14: false,
-            15: false,
-            16: false,
-            17: false,
-            18: false,
-            19: false,
-            20: false,
-            21: false,
-            22: false,
-            23: false,
-            24: false,
-            25: false,
-            26: false,
-            27: false,
-            28: false,
-            29: false,
-            30: false,
-            31: false,
-            32: false,
-            33: false,
-            34: false,
-            35: false,
-            36: false,
-            37: false,
-            38: false,
-            39: false,
-            40: false,
-        });
+    function writeUserData(user) {
+        const db = getDatabase();
+        set(ref(db, '' + user.uid), [
+            [0, 'notSolved'],
+            [1, 'notSolved'],
+            [2, 'notSolved'],
+            [3, 'notSolved'],
+            [4, 'notSolved'],
+            [5, 'notSolved'],
+            [6, 'notSolved'],
+            [7, 'notSolved'],
+            [8, 'notSolved'],
+            [9, 'notSolved'],
+            [10, 'notSolved'],
+            [11, 'notSolved'],
+            [12, 'notSolved'],
+            [13, 'notSolved'],
+            [14, 'notSolved'],
+            [15, 'notSolved'],
+            [16, 'notSolved'],
+            [17, 'notSolved'],
+            [18, 'notSolved'],
+            [19, 'notSolved'],
+            [20, 'notSolved'],
+            [21, 'notSolved'],
+            [22, 'notSolved'],
+            [23, 'notSolved'],
+            [24, 'notSolved'],
+            [25, 'notSolved'],
+            [26, 'notSolved'],
+            [27, 'notSolved'],
+            [28, 'notSolved'],
+            [29, 'notSolved'],
+            [30, 'notSolved'],
+            [31, 'notSolved'],
+            [32, 'notSolved'],
+            [33, 'notSolved'],
+            [34, 'notSolved'],
+            [35, 'notSolved'],
+            [36, 'notSolved'],
+            [37, 'notSolved'],
+            [38, 'notSolved'],
+            [39, 'notSolved'],
+            ]);
     }
 
     const register = async () => {
         try {
             const user = await createUserWithEmailAndPassword(auth, registerEmail, registerPass)
-            addDataRegistration()
+            writeUserData(user.user)
             navigate('/login')
-
-
         } catch (error) {
-            alert(
-                'убетитесь, что вы ввели верный e-mail, а ваш пароль содержит больше 6 символов'
-            )
             console.log(error.message)
         }
     }
@@ -90,7 +86,6 @@ function App() {
                 loginPassword
             );
             navigate('/main')
-            console.log(user);
 
         } catch (error) {
             console.log(error.message);

@@ -1,4 +1,4 @@
-.MainMenu {
+.MainMenuWrapper {
   .headerMainMenu {
     display: flex;
     justify-content: flex-end;
@@ -8,6 +8,7 @@
     font-size: 20px;
     color: white;
     font-weight: 500;
+    margin-bottom: 20vh;
     button {
       cursor: pointer;
       margin-left: 2%;
@@ -17,9 +18,38 @@
       border-radius: 10px;
       font-size: 20px;
       transition: 0.3s;
+      font-weight: 600;
+
       &:hover {
         color: white;
         background-color: #6380d3;
+      }
+    }
+  }
+  .MainMenuTickets{
+    max-width: 90vw ;
+    margin: 0 auto;
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 1px 1px;
+    grid-template-areas:
+    ". . . . . . . . . ."
+    ". . . . . . . . . ."
+    ". . . . . . . . . ."
+    ". . . . . . . . . .";
+    button {
+      cursor: pointer;
+      min-height: 10vh;
+      border: none;
+      font-size: 20px;
+      color: white;
+      font-weight: 600;
+      transition: 0.3s ;
+      &:hover {
+        font-size: 50px;
+        box-shadow: 10px 5px 5px black;
       }
     }
   }
