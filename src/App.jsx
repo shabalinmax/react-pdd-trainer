@@ -1,6 +1,5 @@
 import React from "react";
 import {createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWithEmailAndPassword} from 'firebase/auth'
-import {doc, getDoc, collection, addDoc, setDoc} from 'firebase/firestore'
 import {auth} from "./firebase-config";
 import { Routes, Route, Link , useNavigate} from "react-router-dom";
 import RegisterOrLoginPage from "./pages/RegisterOrLoginPage";
@@ -9,8 +8,10 @@ import Login from "./pages/Login";
 import MainMenu from "./pages/MainMenu";
 import './App.css';
 import {getDatabase, ref, set} from "firebase/database";
-
+import Ticket from "./pages/Ticket";
+import {tickets} from "./tickets";
 function App() {
+    const [selectedTicket, setSelectedTicket] = React.useState()
     const [loginEmail, setLoginEmail] = React.useState('')
     const [loginPassword, setLoginPassword] = React.useState('')
     const [registerEmail, setRegisterEmail] = React.useState('')
@@ -91,6 +92,11 @@ function App() {
             console.log(error.message);
         }
     }
+    const toStartSolvingTicket = (ticket) => {
+        navigate('/ticket')
+        setSelectedTicket(ticket[0])
+        console.log(ticket)
+    }
   return (
     <div className="App">
         <Routes>
@@ -109,8 +115,15 @@ function App() {
              />}/>
             <Route path={'/main'} element={
                 <MainMenu
+                    toStartSolvingTicket={toStartSolvingTicket}
                     user={user}
             />}/>
+            <Route path={'/ticket'} element={
+                <Ticket
+                    selectedTicket={selectedTicket}
+                    ticket={tickets[selectedTicket]}
+                />}/>
+
         </Routes>
     </div>
   );

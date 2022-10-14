@@ -19,7 +19,10 @@ const RegisterOrLoginPage = () => {
                 <button onClick={() => toLogin()} className='login'>войти</button>
             </div>
         </div>
-    );
+
+
+
+);
 };
 
 export default RegisterOrLoginPage;
