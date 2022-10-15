@@ -2,7 +2,7 @@ import React from 'react';
 import './Ticket.css'
 const Ticket = ({ticket, selectedTicket}) => {
     const [currentQuestion, setCurrentQuestion] = React.useState(0)
-    console.log(ticket[currentQuestion].image)
+    console.log(ticket[currentQuestion])
     return (
         <div className={"TicketWrapper"}>
             <h1>{ticket[0].ticket_number}</h1>
@@ -18,10 +18,8 @@ const Ticket = ({ticket, selectedTicket}) => {
                     {ticket[currentQuestion].question}
                     <br/>
                     <img src={ticket[currentQuestion].image} alt="logo"/>
-
                 </div>
                 <div className={'TicketQuestionAnswers'}>
-
                 </div>
             </div>
         </div>

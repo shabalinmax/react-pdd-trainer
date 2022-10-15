@@ -14,22 +14,23 @@ const MainMenu = ({user,toStartSolvingTicket}) => {
     const exit = async () => {
             await signOut(auth)
     }
-    const [tickets, setTickers] = React.useState()
-
-    React.useEffect(() => {
-        get(child(realtimeDB, user.uid)).then((snapshot) => {
+    const [tickets, setTickes] = React.useState()
+    const getStartData = async () => {
+        await get(child(realtimeDB, user.uid)).then((snapshot) => {
             if (snapshot.exists()) {
-                setTickers(snapshot.val());
-                setIsDownloaded(true)
+                setTickes(snapshot.val());
+                // setIsDownloaded(true)
             } else {
                 console.log("No data available");
             }
         }).catch((error) => {
             console.error(error);
         });
-    }, [isDownloaded])
-
-
+    }
+    React.useEffect(() => {
+        getStartData().then(r => setIsDownloaded(true))
+    }, [isDownloaded, user ])
+    //ВАЖНО, НАДО ПОДУМАТЬ, КАК СДЕЛАТЬ, ЧТОБЫ ОТОБРАЖАЛИСЬ БИЛЕТЫ ПРИ ПЕРЕЗАГРУЗКЕ
     return (
         user === null ? redirectToStart() :
             <div className='MainMenuWrapper'>
@@ -39,14 +40,13 @@ const MainMenu = ({user,toStartSolvingTicket}) => {
                 </div>
                 <div className={'MainMenuDescription'}>
                     <h1>Выбери билет и ответь на все вопросы</h1>
-                    <span>Помни, на все вопрсы есть всего 20 минут!</span>
+                    <h2>Помни, на все вопрсы есть всего 20 минут!</h2>
                     <h3>цель — окрасить все билеты в этот цвет </h3>
                 </div>
                 <div className="MainMenuTickets">
                     {tickets?.map(el =>
                         <button onClick={() => toStartSolvingTicket(el)} style={el[1] === 'solved' ? {backgroundColor: '#55937a'} : {backgroundColor: '#6878b9'}} key={el[0]}> {el[0] + 1 }</button>
                     )}
-                    {/*<img src='/images/A_B/0a8c64af8a46c7ceb8e9dbc0943bb56a.jpg' alt="asas"/>*/}
                 </div>
             </div>
     );

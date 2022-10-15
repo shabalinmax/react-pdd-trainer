@@ -22,8 +22,12 @@ function App() {
     React.useEffect(() => {
         onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser)
+            if (user !== null) {
+                navigate('/main')
+            }
         })
-    })
+
+    }, [])
     function writeUserData(user) {
         const db = getDatabase();
         set(ref(db, '' + user.uid), [
@@ -115,7 +119,7 @@ function App() {
              />}/>
             <Route path={'/main'} element={
                 <MainMenu
-                    toStartSolvingTicket={toStartSolvingTicket}
+                    // toStartSolvingTicket={toStartSolvingTicket}
                     user={user}
             />}/>
             <Route path={'/ticket'} element={
