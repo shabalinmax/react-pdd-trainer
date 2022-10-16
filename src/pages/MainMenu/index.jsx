@@ -1,6 +1,6 @@
 import React from 'react';
 import { signOut } from 'firebase/auth'
-import {auth, db, realtimeDB} from "../../firebase-config";
+import {auth, realtimeDB} from "../../firebase-config";
 import { useNavigate  } from "react-router-dom";
 import {child, get} from "firebase/database";
 
@@ -14,11 +14,11 @@ const MainMenu = ({user,toStartSolvingTicket}) => {
     const exit = async () => {
             await signOut(auth)
     }
-    const [tickets, setTickes] = React.useState()
+    const [tickets, setTickets] = React.useState()
     const getStartData = async () => {
         await get(child(realtimeDB, user.uid)).then((snapshot) => {
             if (snapshot.exists()) {
-                setTickes(snapshot.val());
+                setTickets(snapshot.val());
                 // setIsDownloaded(true)
             } else {
                 console.log("No data available");
@@ -39,9 +39,7 @@ const MainMenu = ({user,toStartSolvingTicket}) => {
                     <button onClick={() => exit()}>выйти</button>
                 </div>
                 <div className={'MainMenuDescription'}>
-                    <h1>Выбери билет и ответь на все вопросы</h1>
-                    <h2>Помни, на все вопрсы есть всего 20 минут!</h2>
-                    <h3>цель — окрасить все билеты в этот цвет </h3>
+                    <h1>Выбери билет и ответь на все вопросы. На все вопрсы есть всего 20 минут.</h1>
                 </div>
                 <div className="MainMenuTickets">
                     {tickets?.map(el =>

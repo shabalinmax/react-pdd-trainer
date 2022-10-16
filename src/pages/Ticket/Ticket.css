@@ -36,8 +36,15 @@
 }
 .TicketWrapper .TicketQuestionInfo .TicketQuestionCurrent img {
   border-radius: 10px;
-  width: 90%;
-  height: auto;
+  width: 70%;
+  height: 70%;
+}
+.TicketWrapper .TicketQuestionInfo .TicketQuestionAnswers .TicketQuestionAnswer {
+  padding: 10px;
+  border: 2px solid black;
+  display: block;
+  margin-top: 5px;
+  width: 100%;
 }
 
 /*# sourceMappingURL=Ticket.css.map */

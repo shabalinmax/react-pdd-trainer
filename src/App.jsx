@@ -119,7 +119,7 @@ function App() {
              />}/>
             <Route path={'/main'} element={
                 <MainMenu
-                    // toStartSolvingTicket={toStartSolvingTicket}
+                    toStartSolvingTicket={toStartSolvingTicket}
                     user={user}
             />}/>
             <Route path={'/ticket'} element={
