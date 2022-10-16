@@ -4,7 +4,6 @@ const Ticket = ({ticket, selectedTicket}) => {
     const [currentQuestion, setCurrentQuestion] = React.useState(0)
     const [correctAnswers, setCorrectAnswers] = React.useState([])
     const [incorrectAnswers, setIncorrectAnswers] = React.useState([])
-
 const onClickAnswer = (el) => {
         if (el.is_correct) {
             setCorrectAnswers(prevState  => ([ ...prevState,   ticket[currentQuestion]] ))
@@ -12,15 +11,20 @@ const onClickAnswer = (el) => {
                 setCurrentQuestion(currentQuestion + 1)
             }
         }
-        else {
+        if (!el.is_correct) {
             setIncorrectAnswers(prevState  => ([ ...prevState,   ticket[currentQuestion]] ))
-
+            if (currentQuestion !== 19) {
+                setCurrentQuestion(currentQuestion + 1)
+            }
         }
         }
     React.useEffect(() => {
-        console.log(correctAnswers)
 
-    },[ticket[currentQuestion].title])
+        // console.log(correctAnswers)
+        // console.log(ticket[currentQuestion])
+        // console.log(correctAnswers)
+        // console.log(incorrectAnswers)
+    },[correctAnswers, incorrectAnswers, currentQuestion])
 
     // console.log([1,2,3].indexOf(5))
     return (
@@ -28,7 +32,12 @@ const onClickAnswer = (el) => {
             <h1>{ticket[0].ticket_number}</h1>
             <div className='TicketQuestionNumber'>
                 {ticket.map(el =>
-                    <button key={ticket.indexOf(el)} onClick={() => setCurrentQuestion(ticket.indexOf(el))} style={ticket.indexOf(el) === currentQuestion ? {backgroundColor: '#bcbcbc'} : {}  }>
+                    <button
+                        key={ticket.indexOf(el)}
+                        onClick={() => setCurrentQuestion(ticket.indexOf(el))}
+                        style={correctAnswers.indexOf(ticket[ticket.indexOf(el)]) !== -1 ? {backgroundColor: '#319e2c'}: {} && ticket[currentQuestion]
+                            === ticket[ticket.indexOf(el)]  ? {backgroundColor: '#373737', color: '#fff'} : {} && incorrectAnswers.indexOf(ticket[ticket.indexOf(el)]) !== -1 ? {backgroundColor: '#a43636', color: '#fff'}: {} }
+                    >
                         {ticket.indexOf(el) + 1}
                     </button>)}
             </div>
