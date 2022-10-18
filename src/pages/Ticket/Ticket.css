@@ -41,11 +41,64 @@
   height: 70%;
 }
 .TicketWrapper .TicketQuestionInfo .TicketQuestionAnswers .TicketQuestionAnswer {
-  padding: 10px;
-  border: 2px solid black;
   display: block;
   margin-top: 5px;
   width: 100%;
+  border: none;
+  font-size: 16px;
+  padding: 10px;
+  transition: 0.3s;
+  border-radius: 5px;
+}
+.TicketWrapper .TicketQuestionInfo .TicketQuestionAnswers .TicketQuestionAnswer:hover {
+  background-color: #ffffff;
+}
+.TicketWrapper .TicketResultWrapper {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  max-width: 1000px;
+  width: 70%;
+  height: 90%;
+  background-color: #d5d3d3;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 40px;
+}
+.TicketWrapper .TicketResultWrapper div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.TicketWrapper .TicketResultWrapper div .sad {
+  height: 15%;
+  width: 25%;
+}
+.TicketWrapper .TicketResultWrapper div h1 {
+  color: black;
+  margin-bottom: 20px;
+}
+.TicketWrapper .TicketResultWrapper div button {
+  margin-top: 20px;
+  font-size: 40px;
+  background-color: #ececec;
+  transition: 0.2s;
+  margin-right: 2px;
+  padding: 5px;
+  border: none;
+  border-radius: 10px;
+}
+.TicketWrapper .TicketResultWrapper div button:hover {
+  background-color: #fff;
+}
+@media screen and (max-width: 1150px) {
+  .TicketWrapper .TicketResultWrapper {
+    width: 90%;
+    height: 80%;
+  }
 }
 
 /*# sourceMappingURL=Ticket.css.map */

@@ -67,5 +67,40 @@
   font-size: 30px;
   box-shadow: 10px 5px 5px black;
 }
+@media screen and (max-width: 1200px) {
+  .MainMenuWrapper h1 {
+    font-size: 26px;
+  }
+}
+@media screen and (max-width: 960px) {
+  .MainMenuWrapper .headerMainMenu {
+    margin-bottom: 5vh;
+  }
+  .MainMenuWrapper h1 {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 680px) {
+  .MainMenuWrapper h1 {
+    font-size: 14px;
+  }
+  .MainMenuWrapper .MainMenuTickets {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: ". . . ." ". . . ." ". . . ." ". . . ." ". . . ." ". . . ." ". . . ." ". . . ." ". . . .";
+    padding-bottom: 50px;
+  }
+}
+@media screen and (max-width: 520px) {
+  .MainMenuWrapper h1 {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 370px) {
+  .MainMenuWrapper h1 {
+    font-size: 6px;
+  }
+}
 
 /*# sourceMappingURL=MainMenu.css.map */

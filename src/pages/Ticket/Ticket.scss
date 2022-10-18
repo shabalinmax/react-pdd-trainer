@@ -42,12 +42,65 @@
     }
     .TicketQuestionAnswers{
       .TicketQuestionAnswer{
-        padding: 10px;
-        border: 2px solid black;
         display: block;
         margin-top: 5px;
         width: 100%;
+        border: none;
+        font-size: 16px;
+        padding: 10px;
+        transition: 0.3s;
+        border-radius: 5px;
+        &:hover{
+          background-color: #ffffff;
+        }
       }
     }
   }
+  .TicketResultWrapper {
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    position: absolute;
+    max-width: 1000px;
+    width: 70%;
+    height: 90%;
+    background-color: #d5d3d3;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 40px;
+    div{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      .sad {
+        height: 15%;
+        width: 25%;
+      }
+      h1 {
+        color: black;
+        margin-bottom: 20px;
+      }
+      button{
+        margin-top: 20px;
+        font-size: 40px;
+        background-color: #ececec;
+        transition: 0.2s;
+        margin-right: 2px;
+        padding: 5px;
+        border: none;
+        border-radius: 10px;
+        &:hover{
+          background-color: #fff;
+        }
+      }
+
+    }
+    @media screen and (max-width: 1150px ){
+      width: 90%;
+      height: 80%;
+    }
+  }
+
 }

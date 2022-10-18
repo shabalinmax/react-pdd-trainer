@@ -19,7 +19,6 @@ const MainMenu = ({user,toStartSolvingTicket}) => {
         await get(child(realtimeDB, user.uid)).then((snapshot) => {
             if (snapshot.exists()) {
                 setTickets(snapshot.val());
-                // setIsDownloaded(true)
             } else {
                 console.log("No data available");
             }
@@ -30,7 +29,6 @@ const MainMenu = ({user,toStartSolvingTicket}) => {
     React.useEffect(() => {
         getStartData().then(r => setIsDownloaded(true))
     }, [isDownloaded, user ])
-    //ВАЖНО, НАДО ПОДУМАТЬ, КАК СДЕЛАТЬ, ЧТОБЫ ОТОБРАЖАЛИСЬ БИЛЕТЫ ПРИ ПЕРЕЗАГРУЗКЕ
     return (
         user === null ? redirectToStart() :
             <div className='MainMenuWrapper'>

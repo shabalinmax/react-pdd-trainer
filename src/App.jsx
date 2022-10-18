@@ -16,7 +16,7 @@ function App() {
     const [loginPassword, setLoginPassword] = React.useState('')
     const [registerEmail, setRegisterEmail] = React.useState('')
     const [registerPass, setRegisterPass] = React.useState('')
-    const [user, setUser] = React.useState({})
+    const [user, setUser] = React.useState(null)
     const navigate = useNavigate()
 
     React.useEffect(() => {
@@ -99,7 +99,6 @@ function App() {
     const toStartSolvingTicket = (ticket) => {
         navigate('/ticket')
         setSelectedTicket(ticket[0])
-        console.log(ticket)
     }
   return (
     <div className="App">
@@ -126,8 +125,9 @@ function App() {
                 <Ticket
                     selectedTicket={selectedTicket}
                     ticket={tickets[selectedTicket]}
+                    user={user}
                 />}/>
-
+            <Route path={'*'} element={<RegisterOrLoginPage/>}/>
         </Routes>
     </div>
   );

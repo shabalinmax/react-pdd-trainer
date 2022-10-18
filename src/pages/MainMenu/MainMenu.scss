@@ -74,4 +74,48 @@
       }
     }
   }
+  @media screen and (max-width: 1200px) {
+    h1{
+      font-size: 26px;
+    }
+  }
+  @media screen and (max-width: 960px) {
+    .headerMainMenu{
+      margin-bottom: 5vh;
+    }
+    h1{
+      font-size: 18px;
+    }
+  }
+  @media screen and (max-width: 680px) {
+    h1{
+      font-size: 14px;
+    }
+    .MainMenuTickets {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-areas:
+    ". . . ."
+    ". . . ."
+    ". . . ."
+    ". . . ."
+    ". . . ."
+    ". . . ."
+    ". . . ."
+    ". . . ."
+    ". . . .";
+      padding-bottom: 50px;
+    }
+  }
+  @media screen and (max-width: 520px) {
+    h1{
+      font-size: 10px;
+    }
+  }
+  @media screen and (max-width: 370px) {
+    h1{
+      font-size: 6px;
+    }
+  }
 }
