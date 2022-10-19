@@ -41,7 +41,7 @@ const MainMenu = ({user,toStartSolvingTicket}) => {
                 </div>
                 <div className="MainMenuTickets">
                     {tickets?.map(el =>
-                        <button onClick={() => toStartSolvingTicket(el)} style={el[1] === 'solved' ? {backgroundColor: '#55937a'} : {backgroundColor: '#6878b9'}} key={el[0]}> {el[0] + 1 }</button>
+                        <button onClick={() => toStartSolvingTicket(el)} style={el[1] === 'solved' ? {backgroundColor: '#55937a'} : el[1] === 'failed' ? {backgroundColor: '#d53d3d'} : {backgroundColor: '#6878b9'}} key={el[0]}> {el[0] + 1 }</button>
                     )}
                 </div>
             </div>
