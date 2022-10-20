@@ -14,14 +14,12 @@ const RegisterOrLoginPage = () => {
            <h1>
                Добро пожаловать на ПДД тренажер
            </h1>
+
             <div>
                 <button onClick={() => toRegistration()} className='register'>зарегистрироваться</button>
                 <button onClick={() => toLogin()} className='login'>войти</button>
             </div>
         </div>
-
-
-
 );
 };
 

@@ -1,0 +1,11 @@
+.TimerWrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+.TimerWrapper div {
+  font-size: 20px;
+  font-weight: 600;
+  color: #6380d3;
+}
+
+/*# sourceMappingURL=Timer.css.map */

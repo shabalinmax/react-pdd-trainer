@@ -10,6 +10,7 @@ import './App.css';
 import {getDatabase, ref, set} from "firebase/database";
 import Ticket from "./pages/Ticket";
 import {tickets} from "./tickets";
+
 function App() {
     const [selectedTicket, setSelectedTicket] = React.useState()
     const [loginEmail, setLoginEmail] = React.useState('')
@@ -26,8 +27,7 @@ function App() {
                 navigate('/main')
             }
         })
-
-    }, [])
+    }, [user])
     function writeUserData(user) {
         const db = getDatabase();
         set(ref(db, '' + user.uid), [

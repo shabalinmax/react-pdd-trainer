@@ -36,9 +36,20 @@
   border-radius: 5px;
 }
 .TicketWrapper .TicketQuestionInfo .TicketQuestionCurrent img {
+  margin-top: 5vh;
   border-radius: 10px;
   width: 70%;
   height: 70%;
+}
+@media screen and (max-width: 1100px) {
+  .TicketWrapper .TicketQuestionInfo .TicketQuestionCurrent img {
+    min-width: 90%;
+  }
+}
+@media screen and (max-width: 650px) {
+  .TicketWrapper .TicketQuestionInfo .TicketQuestionCurrent img {
+    min-width: 100%;
+  }
 }
 .TicketWrapper .TicketQuestionInfo .TicketQuestionAnswers .TicketQuestionAnswer {
   display: block;
@@ -52,6 +63,11 @@
 }
 .TicketWrapper .TicketQuestionInfo .TicketQuestionAnswers .TicketQuestionAnswer:hover {
   background-color: #ffffff;
+}
+@media screen and (max-width: 650px) {
+  .TicketWrapper .TicketQuestionInfo .TicketQuestionAnswers .TicketQuestionAnswer {
+    font-size: 12px;
+  }
 }
 .TicketWrapper .TicketResultWrapper {
   top: 50%;

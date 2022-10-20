@@ -33,12 +33,25 @@
     padding: 10px;
     background-color: #fff;
     border-radius: 5px;
+
     .TicketQuestionCurrent {
+
      img{
+       margin-top: 5vh;
        border-radius: 10px;
        width: 70%;
        height: 70%;
      }
+      @media screen and (max-width: 1100px ) {
+        img{
+          min-width: 90%;
+        }
+      }
+      @media screen and (max-width: 650px ) {
+        img{
+          min-width: 100%;
+        }
+      }
     }
     .TicketQuestionAnswers{
       .TicketQuestionAnswer{
@@ -52,6 +65,11 @@
         border-radius: 5px;
         &:hover{
           background-color: #ffffff;
+        }
+      }
+      @media screen and (max-width: 650px ) {
+        .TicketQuestionAnswer{
+          font-size: 12px;
         }
       }
     }

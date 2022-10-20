@@ -2,6 +2,7 @@ import React from 'react';
 import './Ticket.css'
 import { getDatabase, ref, set, update } from "firebase/database";
 import {useNavigate} from "react-router-dom";
+import Timer from "../../components/Timer";
 
 const Ticket = ({ticket, selectedTicket, user}) => {
     const [currentQuestion, setCurrentQuestion] = React.useState(0)
@@ -9,6 +10,8 @@ const Ticket = ({ticket, selectedTicket, user}) => {
     const [allAnswers, setAllAnswers] = React.useState([])
     const [incorrectAnswers, setIncorrectAnswers] = React.useState([])
     const [isResultVisible, setIsResultVisible] = React.useState(false)
+    const [seconds, setSeconds] = React.useState(20*60);
+
     const navigate = useNavigate()
     function success(userId) {
         const db = getDatabase();
@@ -58,11 +61,13 @@ const Ticket = ({ticket, selectedTicket, user}) => {
         else {
             failed(user.uid)
         }
-
     }
+
     React.useEffect(() => {
         allAnswers.length === 20 ? setIsResultVisible(true) : setIsResultVisible(false)
-    }, [allAnswers])
+        seconds < 0 ? setIsResultVisible(true) : setIsResultVisible(false)
+    }, [allAnswers, seconds])
+
     return (
         <div className={"TicketWrapper"}>
             <h1>{ticket[0].ticket_number}</h1>
@@ -79,6 +84,11 @@ const Ticket = ({ticket, selectedTicket, user}) => {
             </div>
             <div className={'TicketQuestionInfo'}>
                 <h2>{ticket[currentQuestion].title}</h2>
+                <Timer
+                    seconds ={seconds}
+                    setSeconds={setSeconds}
+                />
+
                 <div className={'TicketQuestionCurrent'} >
                     {ticket[currentQuestion].question}
                     <br/>
