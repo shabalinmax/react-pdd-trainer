@@ -64,8 +64,7 @@ const Ticket = ({ticket, selectedTicket, user}) => {
     }
 
     React.useEffect(() => {
-        allAnswers.length === 20 ? setIsResultVisible(true) : setIsResultVisible(false)
-        seconds < 0 ? setIsResultVisible(true) : setIsResultVisible(false)
+        (allAnswers.length === 20 ? setIsResultVisible(true) : setIsResultVisible(false) && seconds < 0 ? setIsResultVisible(true) : setIsResultVisible(false))
     }, [allAnswers, seconds])
 
     return (
